@@ -1,0 +1,483 @@
+main {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .linha {
+    height: 1px;
+    background-color: #6c757d;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 100px;
+}
+
+.form-row {
+    padding: 0px 30px;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.form-control {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid rgb(6, 141, 209);
+    border-radius: 0;
+    box-shadow: none;
+    transition: border-color 0.3s;
+    padding: 1.5rem 0rem 1.5rem;
+    margin: 0.5rem;
+}
+
+.form-control:focus {
+    border-color: #0056b3;
+    box-shadow: none;
+}
+
+.form-control::placeholder {
+    color: #6c757d;
+    opacity: 1;
+}
+
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.col-12 {
+    flex: none;
+}
+
+.form-group label {
+    position: absolute;
+    top: -0.3rem;
+    left: 0.8rem;
+    font-size: 0.9rem;
+    color: rgb(6, 141, 209);
+    pointer-events: none;
+}
+
+.checkbox-group {
+    padding: 0px 40px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.form-check {
+    color: #6c757d;
+    flex: 1 1 calc(33.333% - 1rem);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-check .form-check-label {
+    margin-left: 0.5rem;
+}
+
+.form-check-input {
+    height: 100%;
+    width: 20px;
+    margin-right: 0.5rem;
+}
+
+.btn-submit {
+    padding: 0px 40px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.btn-submit button {
+    width: 250px;
+    height: 60px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: rgb(6, 141, 209);
+}
+
+.table-responsive {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 96%;
+    border-collapse: collapse;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+table thead {
+    background-color: rgb(6, 141, 209);
+    color: white;
+}
+
+table thead th {
+    text-align: center;
+    padding: 10px;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #ddd;
+    background-color: white;
+}
+
+table tbody tr td, table thead tr td {
+    text-align: center;
+    padding: 10px;
+}
+
+table tbody tr td img {
+    height: 2rem;
+}
+
+/* Botões na tabela */
+.btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: black;
+    border: none;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+    color: black;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    color: white;
+}
+
+.modal-dialog {
+    max-width: 800px;
+    margin: 1.75rem auto;
+}
+
+.modal-content {
+    padding: 20px;
+}
+
+.modal-header, .modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header .close {
+    font-size: 1.5rem; 
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-title {
+    color: black;
+    font-weight: bold;
+}
+
+.deleteModal .modal-dialog {
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+.deleteModal .modal-content {
+    padding: 20px;
+}
+
+.deleteModal .modal-header {
+    color: white;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0; 
+}
+
+.deleteModal .modal-body {
+    font-size: 1rem;
+    color: #333;
+}
+
+.deleteModal .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.deleteModal .modal-footer .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+.deleteModal .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.deleteModal .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.deleteModal .btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+.deleteModal .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+
+/* Media Queries para Responsividade */
+
+/* Para telas de até 768px (tablets e dispositivos móveis em paisagem) */
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+
+    .checkbox-group {
+        grid-template-columns: 1fr; 
+    }
+
+    .btn-submit button {
+        width: 100%; 
+        font-size: 1.2rem;
+    }
+
+    table thead th, table tbody td {
+        height: fit-content;
+        font-size: 0.6rem;
+        padding: 8px; 
+    }
+
+    table tbody tr td img {
+        height: 1.5rem;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        font-size: 0.8rem; 
+    }
+
+    table thead th {
+        padding: 8px;
+    }
+
+    .form-control {
+        padding: 1rem 0rem 1rem;
+    }
+
+    .form-group label {
+        font-size: 0.8rem;
+    }
+
+    .btn-submit {
+        padding: 20px 20px; 
+    }
+
+    .modal-dialog {
+        max-width: 90%; 
+    }
+
+    .modal-body {
+        padding: 15px; 
+    }
+
+    .modal-footer button {
+        width: 100%; 
+        margin-top: 10px; 
+    }
+
+    .modal-header h5 {
+        font-size: 1.25rem;
+    }
+
+    .deleteModal .modal-dialog {
+        max-width: 90%;
+    }
+
+    .deleteModal .modal-body {
+        font-size: 0.9rem;
+    }
+
+    .deleteModal .modal-footer .btn {
+        font-size: 0.9rem;
+    }
+}
+
+/* Para telas de até 480px (smartphones em retrato) */
+@media (max-width: 480px) {
+    .form-row {
+        grid-template-columns: 1fr; 
+        gap: 15px;
+    }
+
+    .form-control {
+        padding: 1rem 0rem 1rem;
+    }
+
+    .checkbox-group {
+        grid-template-columns: 1fr; 
+    }
+
+    .btn-submit button {
+        width: 100%;
+        font-size: 1.1rem;
+    }
+
+    table {
+        margin-left: 120px;
+    }
+
+    table thead th, table tbody td {
+        height: fit-content;
+        font-size: 0.6rem;
+        padding: 6px;
+    }
+
+    table tbody tr td img {
+        height: 1rem;
+    }
+
+    .btn {
+        font-size: 0.7rem; 
+    }
+
+    .form-group label {
+        font-size: 0.8rem; 
+    }
+
+    .form-group {
+        margin-bottom: 1rem; 
+    }
+
+    .btn {
+        font-size: 0.8rem;
+    }
+
+    .modal-dialog {
+        max-width: 95%; 
+    }
+
+    .modal-body {
+        padding: 10px; 
+    }
+
+    .modal-header h5 {
+        font-size: 1.1rem;
+    }
+
+    .modal-footer button {
+        width: 100%; 
+        padding: 1rem;
+    }
+
+    .deleteModal .modal-dialog {
+        max-width: 95%; 
+    }
+
+    .deleteModal .modal-body {
+        font-size: 0.8rem;
+    }
+
+    .deleteModal .modal-footer .btn {
+        font-size: 0.8rem; 
+    }
+}
+
+/* Para telas de até 320px (dispositivos muito pequenos, como alguns smartphones mais antigos) */
+@media (max-width: 320px) {
+    .form-row {
+        grid-template-columns: 1fr; 
+        gap: 10px;
+    }
+
+    .checkbox-group {
+        grid-template-columns: 1fr; 
+    }
+
+    .btn-submit button {
+        width: 100%; 
+        font-size: 1rem;
+        padding: 20px 20px; 
+    }
+
+    table {
+        width: 100%;
+        margin: 10px 0; 
+    }
+
+    table tbody tr td img {
+        height: 0.8rem;
+    }
+
+    .form-group label {
+        font-size: 0.7rem; 
+    }
+
+    .form-group {
+        margin-bottom: 0.8rem; 
+    }
+
+    .btn {
+        font-size: 0.8rem; 
+    }
+
+    .modal-dialog {
+        max-width: 95%;
+    }
+
+    .modal-body {
+        padding: 10px; 
+    }
+
+    .modal-header h5 {
+        font-size: 1rem; 
+    }
+
+    .modal-footer button {
+        font-size: 1rem;
+        padding: 1rem; 
+    }
+}

@@ -1,0 +1,25 @@
+# Node.js
+/node_modules/
+
+# Composer
+/vendor/
+composer.phar
+
+# Arquivos de lock do npm
+package-lock.json
+
+# Arquivos específicos do editor (VSCode, JetBrains, etc)
+.idea/
+.vscode/
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de log
+*.log
+
+# Arquivos temporários
+*.bak
+*.swp
+

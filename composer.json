@@ -1,0 +1,10 @@
+{
+    "name": "alphacode-crud-test/alphacode-crud-test",
+    "description": "Sistema CRUD de usuários",
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        }
+    },
+    "minimum-stability": "stable"
+}

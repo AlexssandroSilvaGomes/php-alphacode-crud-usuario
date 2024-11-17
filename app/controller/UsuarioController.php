@@ -24,15 +24,13 @@ class UsuarioController
         try {
             $usuarios = $this->usuarioModel->allUsers($limit, $offset);
     
-            // Aqui, vamos preparar os dados para a view
             foreach ($usuarios as &$usuario) {
-                // Adiciona as variáveis de "checkbox" que serão usadas no frontend
                 $usuario['notificacoes_sms_checked'] = $usuario['notificacoes_sms'] === 'true' ? true : false;
                 $usuario['notificacoes_email_checked'] = $usuario['notificacoes_email'] === 'true'? true : false;
                 $usuario['whatsapp_checked'] = $usuario['whatsapp'] === 'true' ? true : false;
             }
     
-            return $usuarios;  // Retorna para a view
+            return $usuarios;
         } catch (\Exception $e) {
             echo json_encode(['status' => 500, 'message' => 'Erro ao buscar usuários: ' . $e->getMessage()]);
         }
@@ -52,6 +50,7 @@ class UsuarioController
             }
 
             try {
+                // Converte a data de nascimento para o formato 'yyyy-mm-dd', se presente nos dados
                 if (isset($dados['data-nascimento']) && !empty($dados['data-nascimento'])) {
                     $dados['data-nascimento'] = \DateTime::createFromFormat('d/m/Y', $dados['data-nascimento'])
                     ->format('Y-m-d');
@@ -77,13 +76,11 @@ class UsuarioController
                 echo json_encode(['status' => 404, 'message' => 'Usuário não encontrado.']);
                 return;
             }
-    
-            // Adiciona as variáveis de "checkbox"
+
             $usuario['notificacoes_sms_checked'] = $usuario['notificacoes_sms'] === 'true' ? true : false;
             $usuario['notificacoes_email_checked'] = $usuario['notificacoes_email'] === 'true'? true : false;
             $usuario['whatsapp_checked'] = $usuario['whatsapp'] === 'true' ? true : false;
     
-            // Retorna os dados para a view
             return $usuario;
         } catch (\Exception $e) {
             echo json_encode(['status' => 500, 'message' => 'Erro ao buscar usuário: ' . $e->getMessage()]);
@@ -110,12 +107,11 @@ class UsuarioController
                         ->format('Y-m-d');
                 }
     
-                // Atualiza o usuário
                 $this->usuarioModel->id = $id;
                 $this->preencherUsuarioModel($dados);
                 $this->usuarioModel->updateUser();
     
-                //return $this->index();
+                return $this->index();
             } catch (\Exception $e) {
                 echo json_encode(['status' => 500, 'message' => 'Erro ao atualizar usuário: ' . $e->getMessage()]);
             }

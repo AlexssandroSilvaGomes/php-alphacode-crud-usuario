@@ -1,5 +1,4 @@
 $(document)(function () {
-    // Quando o formulário for enviado
     $('#createForm')(function (event) {
         event.preventDefault();
 

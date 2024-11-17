@@ -14,17 +14,13 @@ class UsuarioDAO
     // Método para buscar todos os usuários com paginamento
     public function findAll($limit = 10, $offset = 0)
     {
-        // Preparando a consulta SQL com limites de paginação
         $stmt = $this->pdo->prepare("SELECT * FROM tbl_usuario LIMIT :limit OFFSET :offset");
         
-        // Vinculando os parâmetros de limite e offset
         $stmt->bindParam(':limit', $limit, \PDO::PARAM_INT);
         $stmt->bindParam(':offset', $offset, \PDO::PARAM_INT);
         
-        // Executando a consulta
         $stmt->execute();
         
-        // Retornando apenas os resultados com chaves associativas (sem índices numéricos)
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 

@@ -19,7 +19,6 @@ class UsuarioModel
     public $notificacao_sms; 
     public $notificacao_email;
 
-    // Construtor recebe a instância do DAO
     public function __construct($pdo)
     {
         $this->dao = new UsuarioDAO($pdo);

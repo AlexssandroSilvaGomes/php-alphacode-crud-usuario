@@ -8,7 +8,7 @@ require_once __DIR__ . '../../config/database.php';
 // Definir a URL base
 define('BASE_URL', 'http://localhost:8000');
 
-// Roteamento simples (Mapeia as URLs para a Controller)
+// Mapeia as URLs para a Controller
 $uri = $_SERVER['REQUEST_URI'];
 
 // Ação padrão (listar os usuarios)
@@ -24,22 +24,22 @@ include __DIR__ . '/../app/view/usuario/index.php';
 // Verifica qual ação foi solicitada na URL e chama o método adequado
 switch ($action) {
     case 'create':
-        $controller->create(); // Exibe o formulário de criação
+        $controller->create();
         break;
     case 'store':
-        $controller->store(); // Salva o novo usuario
+        $controller->store(); 
         break;
     case 'edit':
-        $controller->edit($_GET['id']); // Exibe o formulário de edição
+        $controller->edit($_GET['id']);
         break;
     case 'update':
-        $controller->update($_GET['id']); // Atualiza o usuario
+        $controller->update($_GET['id']); 
         break;
     case 'delete':
-        $controller->delete($_GET['id']); // Exclui o usuario
+        $controller->delete($_GET['id']);
         break;
     case 'list':
     default:
-        $controller->index(); // Exibe a lista de usuarios
+        $controller->index();
         break;
 }

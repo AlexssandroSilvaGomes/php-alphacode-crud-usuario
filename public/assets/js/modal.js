@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
         $('#editTelefone').val(telefone);
         $('#editCelular').val(celular);
         
-        // Checando e marcando os checkboxes de acordo com os valores
         if (whatsapp === 1) {
             $('#whatsappModal').prop('checked', true);
         } else {
@@ -44,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
             $('#notificacoes-sms-modal').prop('checked', false);
         }
 
-        // Atualizando o action do formulário para incluir o id do usuário
         editForm.setAttribute('action', `?action=update&id=${id}`);
     });
 });

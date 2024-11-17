@@ -52,7 +52,7 @@ CREATE TABLE tbl_usuario (
     nome VARCHAR(150) NOT NULL,
     data_nascimento DATE NOT NULL,
     email VARCHAR(255) NOT NULL,
-    profissao VARCHAR(50) NOT NULL,
+    profissao VARCHAR(100) NOT NULL,
     telefone VARCHAR(20) NOT NULL,
     celular VARCHAR(20) NOT NULL,
     whatsapp BOOLEAN,
@@ -75,7 +75,7 @@ Antes de rodar o projeto, certifique-se de ter os seguintes requisitos instalado
 
 ### 1. Baixe e instale o XAMPP:
 
-- Baixe o XAMPP aqui
+- [Baixe o XAMPP aqui](https://www.apachefriends.org/download.html)
 - Após instalar, inicie o Apache e MySQL no painel de controle do XAMPP.
 
 ### 2. Clone o repositório:
